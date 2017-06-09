@@ -1,0 +1,48 @@
+
+
+.<%=common %> {
+
+}
+
+.<%=common %>:before {
+    content:' ';
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("<%=svgPath%>");
+    background-repeat: no-repeat;
+    background-size: (<%= relWidth %>/1.9) + em (<%= relHeight %>/1.9) + em;
+}
+
+@mixin shared-icon-stuff(){
+    content:' ';
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("<%=svgPath%>");
+    background-repeat: no-repeat;
+    background-size: (<%= relWidth %>/1.9) + em (<%= relHeight %>/1.9) + em;
+    
+}
+
+.no-svg .<%=common %>:before {
+    background-image: url("<%=pngPath%>");
+}
+
+$icons: (
+
+<% _.forEach(svg, function(svgItem) { %>
+
+  <%=svgItem.name%>: (
+    backgroundX: <%= svgItem.relPositionX %>,
+    backgroundY: <%= svgItem.relPositionY %>,
+      background-position: <%= svgItem.relPositionX %>px <%= svgItem.relPositionY %>px,
+      width: <%= svgItem.relWidth %>px,
+      height: <%= svgItem.relHeight %>px,
+  ),
+
+
+<% }); %>
+
+);
+
+
+

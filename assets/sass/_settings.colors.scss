@@ -1,0 +1,237 @@
+
+$text: #1d1d1d;
+
+// $Primary
+// -------------------------------------//
+
+$msu-orange: #F46036;
+$msu-purple: #2e294e;
+$msu-green: #1b998b;
+$msu-purple: #777DA7;
+
+//Gold
+
+$msu-gold: #f6c235;
+    $msu-gold--bright: lighten($msu-gold, 5%);
+    $msu-gold--brighter: lighten($msu-gold--bright, 5%);
+    $msu-gold--dark: darken($msu-gold, 5%);
+    $msu-gold--darker: darken($msu-gold--dark, 5%);
+
+.msu-gold,
+%msu-gold {
+    background-color: $msu-gold;
+}
+
+.msu-dark-gold,
+%msu-dark-gold {
+    background-color: $msu-gold--dark;
+}
+
+.msu-darker-gold,
+%msu-darker-gold {
+    background-color: $msu-gold--darker;
+}
+
+.msu-bright-gold,
+%msu-bright-gold {
+    background-color: $msu-gold--bright;
+}
+
+.msu-brighter-gold,
+%msu-brighter-gold {
+    background-color: $msu-gold--brighter;
+}
+
+
+//Navy
+
+$msu-navy: #142C43; //#002144
+    $msu-navy--bright: lighten($msu-navy, 5%);
+    $msu-navy--brighter: lighten($msu-navy--bright, 5%);
+    $msu-navy--dark: darken($msu-navy, 5%);
+	$msu-navy--darker: darken($msu-navy--dark, 5%);
+
+.msu-navy,
+%msu-navy {
+    background-color: $msu-navy;
+}
+
+.msu-dark-navy,
+%msu-dark-navy {
+    background-color: $msu-navy--dark;
+}
+
+.msu-darker-navy,
+%msu-darker-navy {
+    background-color: $msu-navy--darker;
+}
+
+.msu-bright-navy,
+%msu-bright-navy {
+    background-color: $msu-navy--bright;
+}
+
+.msu-brighter-navy,
+%msu-brighter-navy {
+    background-color: $msu-navy--brighter;
+}
+
+
+//Blue
+
+$msu-blue: #52b7de;
+    $msu-blue--bright: lighten($msu-blue, 5%);
+    $msu-blue--brighter: lighten($msu-blue--bright, 5%);
+    $msu-blue--dark: darken($msu-blue, 5%);
+    $msu-blue--darker: darken($msu-blue--dark, 5%);
+
+.msu-blue,
+%msu-blue {
+    background-color: $msu-blue;
+}
+
+.msu-dark-blue,
+%msu-dark-blue {
+    background-color: $msu-blue--dark;
+}
+
+.msu-darker-blue,
+%msu-darker-blue {
+    background-color: $msu-blue--darker;
+}
+
+.msu-bright-blue,
+%msu-bright-blue {
+    background-color: $msu-blue--bright;
+}
+
+.msu-brighter-blue,
+%msu-brighter-blue {
+    background-color: $msu-blue--brighter;
+}
+
+
+// $Secondary
+// -------------------------------------//
+
+
+//Teal
+
+$msu-teal: #1291B9;
+    $msu-teal--bright: lighten($msu-teal, 5%);
+    $msu-teal--brighter: lighten($msu-teal--bright, 5%);
+    $msu-teal--dark: darken($msu-teal, 5%);
+    $msu-teal--darker: darken($msu-teal--dark, 5%);
+
+
+.msu-teal,
+%msu-teal {
+	background-color: $msu-teal;
+}
+
+.msu-dark-teal,
+%msu-dark-teal {
+    background-color: $msu-teal--dark;
+}
+
+.msu-darker-teal,
+%msu-darker-teal {
+    background-color: $msu-teal--darker;
+}
+
+.msu-bright-teal,
+%msu-bright-teal {
+    background-color: $msu-teal--bright;
+}
+
+.msu-brighter-teal,
+%msu-brighter-teal {
+    background-color: $msu-teal--brighter;
+}
+
+
+//Red
+
+$msu-red: #fe4a49;
+
+
+
+
+// $Grey Scale
+// -------------------------------------//
+
+$copy-color: #3c3c3c; //#44484C;
+$subtle-color: #959595; //#889199;
+$disabled-color: #D4D4D4;
+
+$grey-scale-1: #fafafa;
+    $grey-scale-2: darken($grey-scale-1, 1.5%);
+    $grey-scale-3: darken($grey-scale-2, 2.5%);
+    $grey-scale-4: darken($grey-scale-3, 2.5%);
+    $grey-scale-5: darken($grey-scale-4, 2.5%);
+
+
+.lightest-grey,
+%lightest-grey {
+	background-color: $grey-scale-1;
+}
+
+.lighter-grey,
+%lighter-grey {
+	background-color: $grey-scale-2;
+}
+
+.grey,
+%grey {
+	background-color: $grey-scale-3;
+}
+
+.darker-grey,
+%darker-grey {
+	background-color: $grey-scale-4;
+}
+
+.darkest-grey,
+%darkest-grey {
+	background-color: $grey-scale-5;
+}
+
+
+
+
+
+
+// $Other
+// -------------------------------------//
+
+
+$white: #ffffff;
+$off-white: #fafafa;
+$light-grey: #f5f5f5;
+$medium-grey: #b8b8b8;
+$dark-grey: #797979;
+
+
+$copy: #3c3c3c;
+$copy--subtle: #888888;
+$copy--subtler: #c8c8c8;
+
+
+.copy h4,
+%copy h4 {
+	color: $copy;
+}
+
+.copy-subtle h4,
+%copy-subtle h4 {
+	color: $copy--subtle;
+}
+
+.copy-subtler h4,
+%copy-subtler h4 {
+	color: $copy--subtler;
+}
+
+$color-link: $msu-blue;
+$color-link-hover: $msu-blue--darker;
+

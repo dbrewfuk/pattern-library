@@ -1,0 +1,20 @@
+p {
+	line-height: 1.6;
+}
+
+.msu-lead-paragraph {
+	@include typl8(1);
+	line-height: 1.5;
+}
+
+.msu-ittybitty-paragraph {
+	@include typl8(-1);
+}
+
+.msu-serif {
+	font-family: $base-serif;
+}
+
+b, strong {
+	font-weight: 600;
+}

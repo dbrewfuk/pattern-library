@@ -1,0 +1,36 @@
+// $Padding
+// -------------------------------------//
+
+$padding: $base-spacing-unit * 1rem !default;
+
+$padding--tiny: (0.25 * $padding) !default;
+$padding--small: (0.5 * $padding) !default;
+$padding--large: (1.25 * $padding) !default;
+$padding--xlarge: (1.5 * $padding) !default;
+$padding--xxlarge: (2 * $padding) !default;
+$padding--xxxlarge: (2.25 * $padding) !default;
+$padding--4xlarge: (2.5 * $padding) !default;
+$padding--5xlarge: (2.75 * $padding) !default;
+$padding--6xlarge: (3 * $padding) !default;
+$padding--7xlarge: (3.25 * $padding) !default;
+$padding--8xlarge: (3.5 * $padding) !default;
+$padding--9xlarge: (3.75 * $padding) !default;
+$padding--10xlarge: (4 * $padding) !default;
+
+
+// $Margin
+// -------------------------------------//
+
+$margin: $base-spacing-unit * 1rem !default;
+
+$margin--tiny: (0.25 * $margin) !default;
+$margin--small: (0.5 * $margin) !default;
+$margin--large: (1.25 * $margin) !default;
+$margin--xlarge: (1.5 * $margin) !default;
+
+$margin--xxlarge: (2 * $margin) !default;
+
+$margin--xxlarge: (2 * $margin) !default;
+$margin--xxxlarge: (2.25 * $margin) !default;
+
+

@@ -1,0 +1,42 @@
+[
+  {
+    "sizes": [24, 48],
+    "ids": ["black", "light-grey","grey","white","msu-blue","red","yellow","msu-navy","msu-gold","green","ballblue"],
+    "fills": ["#484848", "#dddddd","#797979","#ffffff","#00A4E3","#fa5e5b","#f4e565","#142C43","#ecac00","#4AB657","#2AB7CA"],
+    "icons": [
+      "action/search",
+      "action/code",
+      "action/help",
+      "alert/error",
+      "action/favorite",
+      "action/favorite_border",
+      "action/list",
+      "action/view_module",
+      "action/view_headline",
+      "action/view_list",
+      "av/play_arrow",
+      "av/play_circle_filled",
+      "av/play_circle_outline",
+      "communication/business",
+      "communication/live_help",
+      "communication/call",
+      "content/filter_list",
+      "content/mail",
+      "content/sort",
+      "navigation/menu",
+      "navigation/expand_more",
+      "navigation/expand_less",
+      "navigation/chevron_left",
+      "navigation/chevron_right",
+      "editor/insert_photo",
+      "navigation/close",
+      "navigation/more_horiz",
+      "editor/insert_photo",
+      "file/file_download",
+      "social/school"
+    ]
+  }
+]
+
+
+  

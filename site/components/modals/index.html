@@ -1,0 +1,125 @@
+---
+template: default.html
+title: Academics Modal
+context: Cards
+excerpt: A big modal card for academic programs.
+---
+
+
+<div class="pl-page">
+<div class="pl-section">
+<div class="pl-container">
+<a class="js-modalToggle button">Toggle modal</a>
+
+
+</div>
+</div>
+<div class="msu-modal-s2 js-modal" tabindex="-1">
+ 
+            
+            <div class="msu-modal-wrapper">
+
+                <div class="msu-modal-program-card">
+                 <div class="msu-modal-close js-closeModal"></div>
+                <div class="msu-modal-program-card-inner">
+                    <div class="program-card-main">
+                    <div class="program-header">
+                        <h1 class="program-title">Program title</h1>
+                        <div class="program-tags">
+                            <div class="program-tag major is-active">M</div>
+                            <div class="program-tag minor is-active">m</div>
+                            <div class="program-tag grad is-active">G</div>
+                        </div>
+                        </div>
+                        <div class="program-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ad voluptatum, pariatur impedit et alias, aliquam ipsa assumenda itaque omnis tempore ea inventore rem fugiat quisquam fugit! Officia, nulla non.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ad voluptatum, pariatur impedit et alias, aliquam ipsa assumenda itaque omnis tempore ea inventore rem fugiat quisquam fugit! Officia, nulla non.</p>
+                        </div>
+                        <div class="program-links">
+                            <h2 class="program-links-title">More info</h2>
+                            <ul class="program-link-list">
+                            <li class="program-link-item"><a class="program-link" href="">Department website</a></li>
+                                <li class="program-link-item"><a class="program-link" href="">Undergraduate info</a></li>
+                                <li class="program-link-item"><a class="program-link" href="">Graduate info</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="program-card-aside">
+                        <div class="program-image"><img src="https://unsplash.it/200/300/?random" />
+                            
+                        </div>
+                        <div class="program-contact-box">
+                                <div class="program-contact-box-wrapper">
+                                    <h3 class="program-contact-title">Department Contact</h3>
+                                    <ul class="program-contact-items">
+                                        <li class="program-contact-item" href="">(000) 111 - 2222</li>
+                                        <li class="program-contact-item" href=""><a href="">email@email.com</a></li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="pl-section">
+<div class="pl-copy-container">
+<h3>Component overview</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia molestiae sed at cumque tempora non laudantium velit, nihil voluptatem natus facere molestias dolorum, illo, ea debitis. Illum corporis, inventore beatae!</p>
+<h3>Accessibility</h3>
+<p>
+<ul>
+	<li>Modal must be closable using escape key.</li>
+	<li>Tab key must only traverse elements inside the modal.</li>
+</ul>
+</p>
+<h3>Resources</h3>
+<ul>
+	<li><a href="https://uxplanet.org/best-practices-for-modals-overlays-dialog-windows-c00c66cddd8c">https://uxplanet.org/best-practices-for-modals-overlays-dialog-windows-c00c66cddd8c</a></li>
+	<li><a href="https://www.lightningdesignsystem.com/components/modals/">https://www.lightningdesignsystem.com/components/modals/</a></li>
+</ul>
+</div>
+
+</div>
+        </div>
+                 
+
+<script>
+$(document).ready(function() {
+
+	//Trap tab key inside modal
+    var inputs = $('.js-modal').find('select, input, textarea, button, a').filter(':visible');
+    var firstInput = inputs.first();
+    var lastInput = inputs.last();
+
+    lastInput.on('keydown', function(e) {
+        if ((e.which === 9 && !e.shiftKey)) {
+            e.preventDefault();
+            firstInput.focus();
+        }
+    });
+
+    //Close modal when esc key is pressed
+    $(document).keydown(function(e) {
+
+
+        if (e.keyCode == 27) {
+
+            $('.js-modal, .js-modalBackground').removeClass('is-active');
+        }
+    });
+
+    //Close modal when close icon is clicked
+    $('.js-closeModal').on('click', function() {
+        $('.js-modal, .js-modalBackground').removeClass('is-active');
+    })
+
+
+    //Modal toggler used for demo
+    $('.js-modalToggle').on('click', function() {
+        $('.js-modal, .js-modalBackground').toggleClass('is-active');
+    });
+    
+});
+</script>

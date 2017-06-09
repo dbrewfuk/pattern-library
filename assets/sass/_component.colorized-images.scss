@@ -1,0 +1,143 @@
+.colorized-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    .colorized-img {
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            mix-blend-mode: multiply;
+            -webkit-filter: grayscale(100%) contrast(1.2);
+            filter: grayscale(100%) contrast(1);
+        }
+    }
+    &.bw {
+        background-color: white;
+        &:after {
+            background-color: $msu-navy;
+            mix-blend-mode: lighten;
+        }
+        .colorized-img img {
+            mix-blend-mode: brighten;
+            -webkit-filter: grayscale(100%) contrast(1.2);
+            filter: grayscale(100%) contrast(1.2);
+        }
+    }
+    &.blue {
+        background-color: lighten($msu-blue, 10%);
+        &:after {
+            background-color: $msu-navy;
+            mix-blend-mode: lighten;
+        }
+        .colorized-img img {
+            mix-blend-mode: brighten;
+            -webkit-filter: grayscale(100%) contrast(1.2);
+            filter: grayscale(100%) contrast(1.2);
+        }
+    }
+    &.gold {
+        background-color: lighten($msu-gold, 0%);
+        &:after {
+            background-color: $msu-navy;
+            mix-blend-mode: lighten;
+        }
+        .colorized-img img {
+            mix-blend-mode: darken;
+            -webkit-filter: grayscale(100%) contrast(1.2);
+            filter: grayscale(100%) contrast(1.2);
+        }
+    }
+    &.navy {
+        background-color: lighten($msu-navy, 30%);
+        &:after {
+            background-color: darken($msu-navy, 10%);
+            mix-blend-mode: lighten;
+        }
+        .colorized-img img {
+            mix-blend-mode: multiply;
+            -webkit-filter: grayscale(100%) contrast(1.2);
+            filter: grayscale(100%) contrast(1.2);
+        }
+    }
+    &.red {
+        background-color: lighten($msu-red, 5%);
+        &:after {
+            background-color: $msu-navy;
+            mix-blend-mode: lighten;
+        }
+        .colorized-img img {
+            mix-blend-mode: multiply;
+            -webkit-filter: grayscale(100%) contrast(1.2);
+            filter: grayscale(100%) contrast(1.2);
+        }
+    }
+    &.green {
+        background-color: lighten($msu-green, 15%);
+        &:after {
+            background-color: $msu-navy;
+            mix-blend-mode: lighten;
+        }
+        .colorized-img img {
+            mix-blend-mode: multiply;
+            -webkit-filter: grayscale(100%) contrast(1.2);
+            filter: grayscale(100%) contrast(1.2);
+        }
+    }
+    &.gold-red {
+        background-color: lighten($msu-gold, 5%);
+        &:after {
+            background-color: darken($msu-red, 10%);
+            mix-blend-mode: lighten;
+        }
+        .colorized-img img {
+            mix-blend-mode: multiply;
+            -webkit-filter: grayscale(100%) contrast(1.2);
+            filter: grayscale(100%) contrast(1.2);
+        }
+    }
+    &.gold-navy {
+        background-color: lighten($msu-gold, 0%);
+        &:after {
+            background-color: darken($msu-navy, 0%);
+            mix-blend-mode: lighten;
+        }
+    }
+    &.gold-blue {
+        background-color: lighten($msu-gold, 0%);
+        &:after {
+            background-color: darken($msu-blue, 10%);
+            mix-blend-mode: lighten;
+        }
+        .colorized-img {
+            mix-blend-mode: multiply;
+            -webkit-filter: grayscale(100%) contrast(1.2);
+            filter: grayscale(100%) contrast(1.2);
+        }
+    }
+    &.blue-navy {
+        background-color: lighten($msu-blue, 0%);
+        &:after {
+            background-color: darken($msu-navy, 0%);
+            mix-blend-mode: lighten;
+        }
+        .colorized-img {
+            mix-blend-mode: multiply;
+            -webkit-filter: grayscale(100%) contrast(1.2);
+            filter: grayscale(100%) contrast(1.2);
+        }
+    }
+}
+
+//Demo stuff
+.demo-block-wide {
+    @include aspect-ratio(16, 9);
+}

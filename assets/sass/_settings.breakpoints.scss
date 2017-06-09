@@ -1,0 +1,46 @@
+///*------------------------------------*\
+//    #SETTINGS-RESPONSIVE
+//\*------------------------------------*/
+
+// Hold our breakpoint aliases and conditions in a list.
+//
+// These can be invoked later on via the `media-query()` mixin found in
+// `_tools.responsive`.
+/*
+$breakpoints: (
+    "palm"          "screen and (max-width: 44.9375em)",
+    "lap"           "screen and (min-width: 45em) and (max-width: 63.9375em)",
+    "lap-and-up"    "screen and (min-width: 45em)",
+    "portable"      "screen and (max-width: 63.9375em)",
+    "desk"          "screen and (min-width: 64em)",
+    "retina"        "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)"
+) !default;
+
+*/
+
+// $Breakpoints
+// -------------------------------------//
+
+$breakpoint-mobile: 640px;
+$breakpoint-tablet: 641px;
+$breakpoint-desktop: 769px;
+$breakpoint-desktop-big: 1290px;
+
+
+//Using only for the flex grid
+$breakpoints: (
+  "(min-width: 240px)" "small",
+  "(min-width: 641px)" "med",
+  "(min-width: 769px)" "large",
+  "(min-width: 1290px)" "xlarge"
+);
+
+@mixin breakpoint($point) {
+  @each $breakpoint in $breakpoints {
+    $query: nth($breakpoint, 1);
+    $name: nth($breakpoint, 2);
+    @if ($name == $point) {
+      @media #{$query} { @content }
+    }
+  }
+}

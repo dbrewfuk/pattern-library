@@ -1,0 +1,1214 @@
+.msu-card {
+    &.m-modal {
+        border: solid thin shade(white, 15%);
+        padding: $padding--xxlarge;
+        position: relative;
+        .msu-card-img {
+            position: relative;
+            height: auto;
+        }
+        ul {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.academics-modal-program-card {
+    background: 0;
+    padding: $padding;
+    @include media(tablet) {
+        padding: $padding--5xlarge;
+    }
+    position: relative;
+    .program-inner {
+        @include grid($selector: div, $gutters: "xxxlarge");
+        margin-bottom: 0;
+        .program-main {
+            @include grid-cell('full');
+            @include media(tablet) {
+                @include grid-cell('2of3');
+            }
+            h3 {
+                font-weight: 500;
+            }
+        }
+        .program-aside {
+            @include grid-cell('full');
+            @include media(tablet) {
+                @include grid-cell('1of3');
+            }
+        }
+    }
+    .program-header {
+        @include grid($selector: ".program-title,.program-tags", $gutters: "large");
+        justify-content: space-between;
+        .program-title {
+            @include grid-cell('auto');
+            margin-bottom: 0;
+            @include media(tablet) {
+                margin-bottom: initial;
+            }
+        }
+    }
+    .program-tags {
+        @include grid-cell('auto');
+    }
+    .tag {
+        font-weight: 600;
+        display: inline-block;
+        @include typl8(-1);
+        width: calc((36 / 19)*1rem);
+        height: calc((36 / 19)*1rem);
+        line-height: calc((36 / 19)*1rem);
+        text-align: center;
+        color: white;
+        background-color: shade(white, 15%);
+        border-radius: 50%;
+        margin-right: $margin--tiny;
+        &.major.is-active {
+            background-color: lighten($msu-navy, 25%);
+            color: $msu-navy;
+        }
+        &.grad.is-active {
+            background-color: lighten($msu-blue, 25%);
+            color: $msu-blue;
+        }
+        &.minor.is-active {
+            background-color: $msu-gold;
+            color: darken($msu-gold, 25%);
+        }
+    }
+    .program-overview {
+        border-bottom: solid thin shade(white, 15%);
+        margin-bottom: $margin;
+    }
+    .program-image {
+        @include aspect-ratio(1.26, 1, img);
+        margin-bottom: $margin;
+        @include media(tablet) {
+            @include aspect-ratio(1, 1.26, img);
+            margin-bottom: $margin;
+        }
+    }
+    .program-subtitle {
+        @include typl8-smallcaps();
+        color: tint($base-text-color, 50%);
+        margin-bottom: $margin--small;
+    }
+    .program-contact-info {}
+    .program-contact-item {
+        display: inline-block;
+        margin-bottom: $margin--small;
+        width: 100%;
+        border-bottom: dotted thin shade(white, 15%);
+        color: #4a4a4a;
+        padding-bottom: $padding--small;
+        font-weight: 500;
+        a {
+            color: $msu-blue;
+            text-decoration: none;
+        }
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+    &--v2 {
+        padding: 0 !important;
+        .i-close {
+            padding: $padding--small;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+    
+        }
+        .program-inner {
+            margin: 0;
+            padding: 0;
+            .program-main {
+                margin: 0;
+                padding: 0 !important;
+            }
+            .program-aside {
+                background: lighten($msu-gold, 5%);
+                margin: 0;
+                padding: 0;
+            }
+        }
+        .main-inner {
+            padding: $padding;
+            @include media(tablet) {
+                padding: $padding--xxxlarge $padding--4xlarge $padding $padding--5xlarge;
+            }
+        }
+        .program-image {
+            margin-bottom: 0;
+            .button {
+                position: absolute;
+                bottom: 0;
+                margin: $margin;
+            }
+        }
+        .program-contact-info {
+            padding: $padding;
+            padding-right: $padding--xxxlarge;
+            background: lighten($msu-gold, 5%);
+            color: darken($msu-gold, 35%);
+            .program-subtitle {
+                color: darken($msu-gold, 35%);
+            }
+        }
+        .program-contact-item {
+            border-bottom: 0;
+            color: darken($msu-gold, 35%);
+            padding-bottom: $padding--tiny;
+            border-bottom: dotted thin darken($msu-gold, 15%);
+            margin-bottom: $margin--tiny;
+            span {
+                opacity: 0.5;
+            }
+        }
+    }
+}
+
+//Program Tabs
+.program-tabs {
+    .tabs-header {
+        margin-bottom: $margin;
+    }
+    .tabs {
+        padding-left: 0;
+        border-bottom: solid shade(white, 15%);
+        @include grid($name: "fit", $selector: ".tab-item");
+        @include media(desktop) {
+            @include grid($name: "auto", $selector: ".tab-item");
+        }
+        .tab-item {
+            position: relative;
+        }
+        .tab-link {
+            @include typl8-smallcaps();
+            display: block;
+            width: 100%;
+            text-align: center;
+            border-bottom: 0;
+            color: tint(#4d4e53, 50%);
+            padding: $padding--tiny $padding--small;
+            position: relative;
+            &:hover {
+                color: tint(#4d4e53, 25%);
+                text-decoration: none;
+            }
+            &.is-active:after {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 3px;
+                background: $msu-gold;
+                bottom: -3px;
+                left: 0;
+            }
+        }
+        .is-active.tab-link {
+            color: #4d4e53;
+        }
+        .tab-content {
+            width: 100%;
+            overflow: hidden;
+            display: none;
+        }
+        .tab-content.is-open {
+            display: block;
+        }
+    }
+    .tabs-wrapper {
+        position: relative;
+    }
+    .tabs {
+        margin-bottom: 0;
+    }
+    .tab-content-wrapper {
+        position: relative;
+    }
+    .tab-content {
+        position: relative;
+        overflow: hidden;
+        padding: 0 $padding--large;
+    }
+    .tab-content-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: none;
+    }
+}
+
+.button {
+    padding: $padding--tiny $padding--small;
+    border-radius: 3px;
+    background: $msu-blue;
+    text-align: center;
+    color: lighten($msu-blue, 85%);
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: $margin;
+    cursor: pointer;
+}
+
+.msu-card-inner {
+    overflow: hidden;
+    @include aspect-ratio(4, 5, msu-card-wrapper);
+    &.long {
+        @include aspect-ratio(3, 1);
+    }
+    &.tall {
+        @include aspect-ratio(3, 4);
+    }
+}
+
+.msu-card-copy {
+    padding: $padding--tiny 0;
+    width: 100%;
+    //Modifiers 
+    &.overlay {
+        padding: $padding;
+        position: absolute;
+        bottom: 0;
+        z-index: 3;
+        .msu-card-title {
+            color: white;
+        }
+        &.center {
+            top: 50%;
+            left: 50%;
+            bottom: initial;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            .college {
+                margin-bottom: $margin--tiny;
+            }
+        }
+        .msu-card-title {
+            font-weight: 600;
+            margin-bottom: $margin--tiny;
+        }
+        .college {
+            color: white;
+
+        }
+        .msu-card-tag:first-child {
+            padding-left: 0 !important;
+        }
+    }
+    &.center {
+        padding: $padding--small;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+        text-align: center;
+    }
+    &.block {
+        background-color: inherit;
+        padding: $padding $padding--large $padding--large $padding--large !important;
+
+        .msu-card-title,
+        .college,
+        .bar,
+        .msu-card-tag {
+            color: $msu-navy !important;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 5vw;
+            transform: skewY(-3deg) translateY(-30%);
+            top: 0;
+            background: inherit;
+            left: 0;
+            z-index: -1;
+        }
+        &.navy {
+            background: $msu-navy;
+            .bar,
+            .msu-card-title,
+            .college,
+            .msu-card-tag {
+                color: white !important;
+            }
+        }
+        &.gold {
+            background: $msu-gold;
+        }
+        &.blue {
+            background: $msu-blue;
+        }
+    }
+}
+
+.msu-card-title {
+    @include typl8(2);
+    font-weight: 500;
+    margin-bottom: $margin--small;
+    line-height: 1;
+    &.big {
+        @include typl8(3);
+    }
+}
+
+.msu-card-bkgd {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.colorized-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+
+    }
+    .colorized {
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            mix-blend-mode: multiply;
+            -webkit-filter: grayscale(100%) contrast(1.2);
+            filter: grayscale(100%) contrast(1);
+        }
+        &:hover {
+            img {
+                mix-blend-mode: darken;
+            }
+        }
+    }
+    &.blue {
+        background-color: lighten($msu-blue, 10%);
+        &:after {
+            background-color: darken($msu-blue, 40%);
+            mix-blend-mode: lighten;
+        }
+        .msu-card-copy {
+            background: $msu-gold;
+        }
+        .msu-card-img.colorized img {
+            mix-blend-mode: brighten;
+            -webkit-filter: grayscale(100%) contrast(1.2);
+            filter: grayscale(100%) contrast(1.2);
+        }
+    }
+    &.gold {
+        background-color: lighten($msu-gold, 0%);
+        &:after {
+            background-color: darken($msu-gold, 15%);
+            mix-blend-mode: lighten;
+        }
+        .msu-card-img.colorized img {
+            mix-blend-mode: darken;
+            -webkit-filter: grayscale(100%) contrast(1.2);
+            filter: grayscale(100%) contrast(1.2);
+        }
+    }
+    &.navy {
+        background-color: lighten($msu-navy, 30%);
+        &:after {
+            background-color: darken($msu-navy, 10%);
+            mix-blend-mode: lighten;
+        }
+        .msu-card-img.colorized img {
+            mix-blend-mode: multiply;
+            -webkit-filter: grayscale(100%) contrast(1.2);
+            filter: grayscale(100%) contrast(1.2);
+        }
+        .msu-card-copy {
+            background: $msu-red;
+        }
+    }
+    &.red {
+        background-color: lighten($msu-red, 15%);
+        &:after {
+            background-color: darken($msu-red, 45%);
+            mix-blend-mode: lighten;
+        }
+        .msu-card-img.colorized img {
+            mix-blend-mode: multiply;
+            -webkit-filter: grayscale(100%) contrast(1.2);
+            filter: grayscale(100%) contrast(1.2);
+        }
+        .msu-card-copy {
+            background: $msu-purple;
+           
+        }
+    }
+    &.green {
+        background-color: lighten($msu-green, 15%);
+        &:after {
+            background-color: darken($msu-green, 45%);
+            mix-blend-mode: lighten;
+        }
+        .msu-card-img.colorized img {
+            mix-blend-mode: multiply;
+            -webkit-filter: grayscale(100%) contrast(1.2);
+            filter: grayscale(100%) contrast(1.2);
+        }
+        .msu-card-copy {
+            background: $msu-green;
+        }
+
+    }
+    &.gold-red {
+        background-color: lighten($msu-gold, 5%);
+        &:after {
+            background-color: darken($msu-red, 10%);
+            mix-blend-mode: lighten;
+        }
+        .msu-card-img.colorized img {
+            mix-blend-mode: multiply;
+            -webkit-filter: grayscale(100%) contrast(1.2);
+            filter: grayscale(100%) contrast(1.2);
+        }
+    }
+    &.gold-navy {
+        background-color: lighten($msu-gold, 0%);
+        &:after {
+            background-color: darken($msu-navy, 0%);
+            mix-blend-mode: lighten;
+        }
+        
+        .msu-card-copy {
+            background: $msu-blue;
+        }
+    }
+    &.gold-blue {
+        background-color: lighten($msu-gold, 0%);
+        &:after {
+            background-color: darken($msu-blue, 10%);
+            mix-blend-mode: lighten;
+        }
+        .msu-card-img.colorized {
+            mix-blend-mode: multiply;
+            -webkit-filter: grayscale(100%) contrast(1.2);
+            filter: grayscale(100%) contrast(1.2);
+        }
+    }
+    &.blue-navy {
+        background-color: lighten($msu-blue, 0%);
+        &:after {
+            background-color: darken($msu-navy, 0%);
+            mix-blend-mode: lighten;
+        }
+        .msu-card-img.colorized {
+            mix-blend-mode: multiply;
+            -webkit-filter: grayscale(100%) contrast(1.2);
+            filter: grayscale(100%) contrast(1.2);
+        }
+    }
+}
+
+.bar {
+    width: 30px;
+    height: 4px;
+    color: white;
+    margin-bottom: $margin--small;
+    display: inline-block;
+    border-bottom: solid 4px;
+}
+
+.msu-card-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &.short {
+        height: 70%;
+    }
+}
+
+.msu-card-gradient {
+    &:after {
+        @include linear-gradient($start: transparent, $from: 0%, $stop: rgba(0, 0, 0, 0.6), $to: 100%);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        content: "";
+        top: 0;
+        left: 0;
+    }
+    &.cover:after {
+        @include linear-gradient($start: transparent, $from: 0%, $stop: rgba(0, 0, 0, 0.6), $to: 0%);
+    }
+}
+
+.msu-card-tags {
+    .msu-card-tag {
+        font-weight: 600;
+        display: inline-block;
+        font-size: calc((12/19)*1rem);
+        width: calc((24 / 19)*1rem);
+        height: calc((24 / 19)*1rem);
+        line-height: calc((24 / 19)*1rem);
+        color: shade(white, 35%);
+        text-align: center;
+        background-color: shade(white, 10%);
+        border-radius: 50%;
+    }
+    &.big {
+        .msu-card-tag {
+            font-size: calc((14/19)*1rem);
+            width: calc((32 / 19)*1rem);
+            height: calc((32 / 19)*1rem);
+            line-height: calc((32 / 19)*1rem);
+        }
+    }
+    &.plain {
+        .msu-card-tag {
+            background: 0 !important;
+            color: white;
+            opacity: 0.5 !important;
+            display: inline-block;
+            padding-right: $padding--tiny;
+            width: auto;
+            height: auto;
+            font-size: calc((16/19) * 1rem);
+            &.is-active {
+                opacity: 1 !important;
+            }
+        }
+    }
+}
+
+.big-program-card-wrapper {
+    @include container();
+}
+
+.i-phone {
+
+    padding-right: $padding--small;
+}
+
+.i-email {
+ 
+    padding-right: $padding--small;
+}
+
+.msu-contact-info {
+    margin-top: $margin;
+    h2 {
+        margin-bottom: $margin--small;
+        color: shade(white, 15%);
+    }
+}
+
+.js-modal {
+    .modal {
+        position: relative;
+        z-index: 2;
+        background: white;
+        @include box-shadow(4);
+    }
+    &.is-active {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+//Final Modal
+.msu-modal {
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    .msu-modal-background {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.75);
+        z-index: 1;
+        opacity: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transition: opacity 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+        &.is-active {
+            opacity: 1;
+        }
+    }
+    .msu-modal-close {
+        padding: 12px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+ 
+ 
+        opacity: 0.5;
+        transition: opacity 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+        z-index: 3;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .msu-modal-wrapper {
+        @include large-container();
+        z-index: 2;
+        position: absolute;
+        height: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .msu-modal-program-card {
+        @include grid();
+        @include box-shadow(3);
+        background: white;
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        @include media(desktop) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .program-card-main {
+            @include grid-cell("full");
+            padding: $padding;
+            @include media(desktop) {
+                @include grid-cell("2of3");
+                padding: $padding--xxxlarge $padding--xxxlarge $padding--xxxlarge $padding--5xlarge;
+            }
+        }
+        .program-card-aside {
+            @include grid-cell("full");
+            @include media(desktop) {
+                height: auto;
+                @include grid-cell("1of3");
+            }
+        }
+    }
+    .program-tags {
+        margin-bottom: $margin;
+        .program-tag {
+            font-weight: 600;
+            display: inline-block;
+            @include typl8(-1);
+            width: calc((32 / 19)*1rem);
+            height: calc((32 / 19)*1rem);
+            line-height: calc((32 / 19)*1rem);
+            text-align: center;
+            color: white;
+            background-color: shade(white, 15%);
+            border-radius: 50%;
+            &.major.is-active {
+                background-color: lighten($msu-navy, 25%);
+                color: $msu-navy;
+            }
+            &.grad.is-active {
+                background-color: lighten($msu-blue, 25%);
+                color: $msu-blue;
+            }
+            &.minor.is-active {
+                background-color: $msu-gold;
+                color: darken($msu-gold, 25%);
+            }
+        }
+    }
+    .program-title {
+        font-weight: 500;
+    }
+    .program-content {
+        p {
+            line-height: 1.75;
+        }
+    }
+    .program-links-title {
+        @include typl8-smallcaps();
+        font-size: calc((14/19)*1rem);
+        margin-bottom: $margin--tiny;
+        color: shade(white, 35%);
+    }
+    .program-links {
+        padding-top: $padding;
+        border-top: solid thin shade(white, 15%);
+    }
+    .program-link-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        .program-link-item {
+            display: inline-block;
+            margin-right: $margin--small;
+        }
+        .program-link {
+            text-decoration: none;
+            color: $msu-blue;
+            font-weight: 500;
+        }
+    }
+    .program-image {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .program-contact-box {
+        padding: $padding;
+        width: 100%;
+        position: relative;
+        @include media(desktop) {
+            position: absolute;
+            bottom: 0;
+        }
+    }
+    .program-contact-box-wrapper {
+        background: $msu-navy;
+        color: white;
+        width: 100%;
+        padding: $padding;
+        text-align: center;
+    }
+    .program-contact-title {
+        @include typl8-smallcaps();
+        font-size: calc((14/19)*1rem);
+        color: white;
+    }
+    .program-contact-items {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        margin-bottom: $margin;
+        a {
+            color: white;
+        }
+    }
+    .department-button {
+        padding: $padding--tiny $padding--small;
+        background: $msu-blue;
+        text-align: center;
+        color: lighten($msu-blue, 85%);
+        font-weight: 600;
+        display: inline-block;
+        margin: 0 auto;
+        font-size: calc((16/19)*1rem);
+        border-radius: 4px;
+    }
+}
+
+//Final Modal style 2
+.msu-modal-s2 {
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    .msu-modal-background {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.75);
+        z-index: 1;
+        opacity: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transition: opacity 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+        &.is-active {
+            opacity: 1;
+        }
+    }
+    .msu-modal-close {
+        padding: $padding--small;
+        position: absolute;
+        top: 0;
+        right: - $padding--small;
+        cursor: pointer;
+        
+        opacity: 0.5;
+        transition: opacity 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+        z-index: 3;
+        transform: translateY(-100%);
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .msu-modal-wrapper {
+        @include container();
+        z-index: 2;
+        position: absolute;
+        height: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 48px;
+    }
+    .msu-modal-program-card {
+        @include box-shadow(3);
+        background: white;
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        padding: $padding;
+        @include media(desktop) {
+            top: 50%;
+            transform: translateY(-50%);
+            padding: $padding--xxxlarge $padding--5xlarge;
+        }
+        .msu-modal-program-card-inner {
+            @include grid($gutters: "xxxlarge", $selector: div);
+            margin-bottom: 0;
+            .program-card-main {
+                @include grid-cell("full");
+                @include media(desktop) {
+                    @include grid-cell("2of3");
+                }
+            }
+            .program-card-aside {
+                @include grid-cell("full");
+                @include media(desktop) {
+                    height: auto;
+                    @include grid-cell("1of3");
+                }
+            }
+        }
+    }
+    .program-tags {
+        margin-bottom: $margin;
+        .program-tag {
+            margin-right: $margin--tiny;
+            font-weight: 600;
+            display: inline-block;
+            font-size: calc((14/19)*1rem);
+            width: calc((32 / 19)*1rem);
+            height: calc((32 / 19)*1rem);
+            line-height: calc((32 / 19)*1rem);
+            color: shade(white, 35%);
+            text-align: center;
+            background-color: shade(white, 10%);
+            border-radius: 50%;
+            &.major.is-active {
+                background-color: lighten(#6a8012, 25%);
+                color: #6a8012;
+            }
+            &.grad.is-active {
+                background-color: lighten(#682145, 25%);
+                color: #682145;
+            }
+            &.minor.is-active {
+                background-color: lighten(#2c95b5, 25%);
+                color: #2c95b5;
+            }
+        }
+    }
+    .program-header {
+        @include grid();
+        justify-content: space-between;
+        align-items: center;
+    }
+    .program-title {
+        @include grid-cell("auto");
+        font-weight: 500;
+    }
+    .program-tags {
+        @include grid-cell("auto");
+    }
+    .program-content {
+        p {
+            line-height: 1.75;
+        }
+    }
+    .program-links-title {
+        @include typl8-smallcaps();
+        margin-bottom: $margin--tiny;
+        color: shade(white, 50%);
+    }
+    .program-links {
+        padding-top: $padding;
+        border-top: solid thin shade(white, 15%);
+    }
+    .program-link-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        .program-link-item {
+            display: inline-block;
+            margin-right: $margin--small;
+        }
+        .program-link {
+            text-decoration: none;
+            color: $msu-blue;
+            font-weight: 500;
+        }
+    }
+    .program-image {
+        @include aspect-ratio(1, 1.26, img);
+        margin-bottom: $margin;
+    }
+    .program-contact-box {
+        width: 100%;
+        position: relative;
+    }
+    .program-contact-box-wrapper {
+        width: 100%;
+    }
+    .program-contact-title {
+        @include typl8-smallcaps();
+        margin-bottom: $margin--tiny;
+        color: shade(white, 50%);
+    }
+    .program-contact-items {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        margin-bottom: $margin;
+    }
+    .department-button {
+        padding: $padding--small $padding;
+        background: $msu-blue;
+        text-align: center;
+        color: lighten($msu-blue, 85%);
+        font-weight: 600;
+        display: inline-block;
+        margin: 0 auto;
+        border-radius: 4px;
+        margin-bottom: $margin;
+    }
+}
+
+.msu-modal-s3 {
+    background: white;
+    z-index: 50000;
+    position: absolute;
+    margin-top: 20vh;
+    width: 100%;
+    .bg-image {
+        position: absolute;
+        right: 0;
+        width: 33%;
+        top: 0;
+    }
+    .program-image {
+        position: relative;
+        @include aspect-ratio(1.26, 1, img);
+        margin-bottom: $margin;
+        @include media(tablet) {
+            @include aspect-ratio(1, 1.26, img);
+            margin-bottom: $margin;
+        }
+        img {}
+    }
+    .bg-block {
+        @include aspect-ratio(1, 1);
+        background: shade(white, 5%);
+        left: $margin;
+        bottom: - $margin;
+        z-index: -1;
+        position: absolute;
+        width: 100%;
+        right: 0;
+    }
+    .program-tags {
+        .program-tag {
+            margin-right: $margin--tiny;
+            font-weight: 600;
+            display: inline-block;
+            font-size: calc((14/19)*1rem);
+            width: calc((32 / 19)*1rem);
+            height: calc((32 / 19)*1rem);
+            line-height: calc((32 / 19)*1rem);
+            color: shade(white, 35%);
+            text-align: center;
+            background-color: shade(white, 10%);
+            border-radius: 50%;
+            &.major.is-active {
+                background-color: lighten(#9CEC5B, 5%);
+                color: darken(#9CEC5B, 25%);
+            }
+            &.grad.is-active {
+                background-color: lighten(#fe4a49, 5%);
+                color: darken(#fe4a49, 35%);
+            }
+            &.minor.is-active {
+                background-color: lighten(#52b7de, 5%);
+                color: darken(#52b7de, 25%);
+            }
+        }
+    }
+    .separator-wrapper {
+        position: relative;
+        background: inherit;
+        z-index: 1;
+        .separator-bar {
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            right: 0;
+            left: 0;
+            display: block;
+            overflow: visible;
+            width: 100%;
+            height: 11vw;
+            transform: skewY(-3deg) translateY(-50%);
+            border: none;
+            content: "";
+            background: inherit;
+            z-index: 1;
+        }
+    }
+    .program-content {
+        padding-top: $padding;
+        margin-bottom: $margin;
+        position: relative;
+        z-index: 2;
+        h3 {
+            font-weight: 500;
+        }
+    }
+    .program-links-title {
+        font-weight: 600;
+        margin-bottom: $margin--small;
+        position: relative;
+        padding-top: $padding--small;
+        margin-top: $margin--small;
+        &:before {
+            content: "";
+            position: absolute;
+            width: 40px;
+            height: 4px;
+            background: $text;
+            top: 0;
+            margin-bottom: .8rem;
+        }
+    }
+    .program-links {
+        padding-top: $padding;
+        margin-left: $margin;
+    }
+    .program-link-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        .program-link-item {
+            margin-right: $margin--small;
+        }
+        .program-link {
+            text-decoration: none;
+            color: $msu-blue;
+            font-weight: 500;
+            @include typl8(1);
+        }
+    }
+}
+
+.big-card-title {
+    margin-bottom: $margin--tiny;
+}
+
+.msu-modal-background {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: -1;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: opacity 0.1s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    &.is-active {
+        opacity: 1;
+        z-index: 4000;
+    }
+}
+
+.js-modalToggle {
+    z-index: 3000;
+    position: relative;
+}
+
+.js-modal {
+    opacity: 0;
+    z-index: -1;
+    transform: scale(1.15);
+    transition: all cubic-bezier(0.465, 0.183, 0.153, 0.946) 0.3s;
+    &.is-active {
+        z-index: 4000;
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.search-grid {
+    position: relative;
+}
+
+.fixed-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+    overflow-y: scroll;
+}
+
+.college {
+    @include typl8-smallcaps();
+    margin-bottom: $margin--tiny;
+    color: shade(white, 25%);
+    font-size: calc((14/19) * 1rem);
+    &.big {
+        @include typl8(0);
+    }
+}
+
+.msu-card:hover {
+    .colorized-bg {
+        &.navy,
+        &.gold-navy,
+        &.blue,
+        &.red {
+            background: transparent;
+            &:after {
+             
+                opacity: 0;
+            }
+            .colorized {
+                filter: none !important;
+                img {
+                    filter: none !important;
+                    mix-blend-mode: normal;
+                }
+            }
+        }
+    }
+}

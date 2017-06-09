@@ -1,0 +1,86 @@
+.msu-basic-page {
+    padding: $padding--xxlarge 0 $padding--xxlarge 0;
+}
+
+.msu-page-content, .msu-page-intro {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-weight: 600;
+        letter-spacing: -0.5px;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    p {
+        max-width: 37.894rem;
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+    h2 {
+        font-weight: 600;
+    }
+    h5 {
+        @include typl8-smallcaps();
+    }
+    p {
+        line-height: 1.6;
+        @include typl8(0);
+        margin-bottom: 1.768rem;
+        &.lede {
+
+            @include typl8(1);
+        }
+    }
+    ul {
+        margin-top: 0;
+        margin-bottom: 1.768rem;
+    }
+}
+
+.msu-page-nav {
+   
+    h5 {
+        @include typl8-smallcaps();
+        color: $msu-navy;
+        opacity: 0.5;
+        margin-bottom: $margin--tiny;
+    }
+    ul {
+        margin-left: 0;
+        margin-top: 0;
+        list-style: none;
+        padding-left: 0;
+        
+    }
+    li {
+        padding: 0 0 $padding--tiny 0;
+        margin-right: $margin--small;
+        position: relative;
+  
+     
+    }
+    a {
+        text-decoration: none;
+        color: $msu-blue;
+
+        font-weight: 500;
+
+            @include icon('expand_more', msu-navy, 24, after);
+            &:after {
+                position: absolute;
+                right: 0;
+                opacity: 0.25;
+            
+            }
+        
+
+    }
+    
+}

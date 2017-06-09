@@ -1,0 +1,114 @@
+.search {
+        z-index: 3;
+        position: relativ;
+        width: 100%;
+        @include media(tablet) {
+            width: 66.666%;
+        }
+    }
+    .search-bar {
+        border-bottom: solid;
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        border-bottom: 0;
+        padding: $padding--tiny $padding;
+        background: white;
+        transition: ease-out all 0.2s;
+        .clear-search,
+        .search-icon {
+            right: $padding;
+        }
+        &.raised {
+            @include box-shadow(1);
+            &:hover {
+                @include box-shadow(2);
+                .msu-search-input {
+                    &::placeholder {
+                        color: $msu-navy;
+                    }
+                }
+            }
+        }
+        .search-input {
+            padding: $padding--tiny 0;
+            border: none;
+            @include typl8(2);
+            font-weight: 500;
+            width: 100%;
+            &::placeholder {
+                transition: ease-out all 0.2s;
+                color: $base-text-color;
+                @include typl8(2);
+                font-weight: 400;
+            }
+            &:valid {
+                ~ .clear-search {
+                    opacity: 1;
+                }
+                ~ .search-icon {
+                    opacity: 0;
+                }
+            }
+            &:focus {
+                outline: 0;
+            }
+        }
+        .search-bar-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            transition: ease-in-out all 0.18s;
+            appearance: none;
+            position: absolute;
+            height: 24px;
+            width: 24px;
+            right: 0;
+            background: 0;
+            border: 0;
+            padding: 0;
+            margin: 0;
+            right: $margin;
+            svg {
+                height: 24px;
+                width: 24px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+        .search-icon {
+            opacity: 1;
+            svg {
+                fill: $msu-blue;
+                transition: ease-out all 0.2s;
+            }
+        }
+        .clear-search {
+            opacity: 0;
+            svg {
+                fill: $msu-blue;
+                transition: ease-out all 0.2s;
+            }
+        }
+        &.flat {
+            background: none;
+            border-bottom: solid;
+            padding-left: $padding--small;
+            .search-input {
+                background: none;
+
+            }
+            .search-bar-icon {
+                svg {
+                    fill: $msu-navy;
+                }
+            }
+        }
+    }
+    .search-helper {
+        @include typl8-smallcaps();
+        padding-bottom: $padding--small;
+    }
+

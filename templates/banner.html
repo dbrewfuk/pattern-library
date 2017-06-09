@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'head.html' %}
+
+
+<body class="Site">
+    {% include 'site-navigation.html' %}
+    {% include 'site-header.html' %}
+    <div class="banner js-unslider">
+
+    <div class="banner-slider js-slider">
+
+        <div class="banner-slide js-slide">
+            <figure class="banner-figure">
+                <img class="banner-image" src="https://c1.staticflickr.com/9/8715/17125150408_7fa1288b55_k.jpg" />
+            </figure>
+            <div class="banner-caption-wrapper">
+                <figcaption class="banner-caption">
+                    <div class="banner-context">banner types</div>
+                    <h1 class="banner-headline">Bottom left</h1>
+                    <p class="banner-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <a class="banner-button">Read more</a>
+                </figcaption>
+            </div>
+        </div>
+
+        <div class="banner-slide top-right js-slide">
+            <figure class="banner-figure">
+                <img class="banner-image" src="https://farm9.staticflickr.com/8592/16265009129_bdf46d7d29_b.jpg" />
+            </figure>
+            <div class="banner-caption-wrapper">
+                <figcaption class="banner-caption">
+                    <div class="banner-context">banner types</div>
+                    <h1 class="banner-headline">Top right</h1>
+                    <p class="banner-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <a class="banner-button">
+                      <span>Read more</span>
+                    </a>
+                </figcaption>
+            </div>
+        </div>
+
+        <div class="banner-slide top-left js-slide">
+            <figure class="banner-figure">
+                <img class="banner-image" src="https://c2.staticflickr.com/8/7585/17148946812_1fd3ae9067_k.jpg" />
+            </figure>
+            <div class="banner-caption-wrapper">
+                <figcaption class="banner-caption">
+                    <div class="banner-context">banner types</div>
+                    <h1 class="banner-headline">Top left</h1>
+                    <p class="banner-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <a class="banner-button">
+                      <span>Read more</span>
+                    </a>
+                </figcaption>
+            </div>
+        </div>
+
+        <div class="banner-slide gold centered js-slide">
+            <figure class="banner-figure">
+                <img class="banner-image" src="https://farm9.staticflickr.com/8654/16450282692_e8f3e42b7d_b.jpg" />
+            </figure>
+            <div class="banner-caption-wrapper">
+                <figcaption class="banner-caption">
+                    <div class="banner-context">banner types</div>
+                    <h1 class="banner-headline">Centered & Gold</h1>
+                    <p class="banner-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <a class="banner-button">
+                      <span>Read more</span>
+                    </a>
+                </figcaption>
+            </div>
+        </div>
+
+        <div class="banner-slide navy centered js-slide">
+            <figure class="banner-figure">
+                <img class="banner-image" src="https://farm9.staticflickr.com/8654/16450282692_e8f3e42b7d_b.jpg" />
+            </figure>
+            <div class="banner-caption-wrapper">
+                <figcaption class="banner-caption">
+                    <div class="banner-context">banner types</div>
+                    <h1 class="banner-headline">Centered & Navy</h1>
+                    <p class="banner-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <a class="banner-button">
+                      <span>Read more</span>
+                    </a>
+                </figcaption>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+    <main class="site-content">
+        <div class="site-content__wrapper">
+            {{ page.content }}
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="footer">
+            {% include 'footer.html' %}
+        </div>
+    </footer>
+    {% include 'scripts.html' %}
+</body>
+
+</html>
